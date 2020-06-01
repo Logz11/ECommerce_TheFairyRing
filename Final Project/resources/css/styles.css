@@ -1,0 +1,828 @@
+/* --------------------------------------------- */
+/* COLOR PALETTE*/
+/* --------------------------------------------- */
+
+/*#69b0aa - BASE TEAL
+#b0fcf6 - BRIGHT AQUA (UNDERLINES, HOVER AFFECTS, AQUARIUS, THIN BORDERS)
+#31635f - DARK TEAL (USE FOR BACKGROUND)
+#633b27 - BURNT UMBER BROWN (USE FOR CONTAINER BACKGROUNDS)
+#b08069 - CLAY BROWN
+*/
+
+/* --------------------------------------------- */
+/* BASIC SETUP */
+/* --------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #31635f;
+    color: #D8D8D8;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    letter-spacing: 3px;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #D8D8D8;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+p {
+    line-height: 1.3;
+}
+
+.disclaimer{
+    opacity: 0.2;
+    transition: opacity 0.2s;
+    cursor: default;
+}
+
+.disclaimer:hover {
+    opacity: 1;
+}
+
+/* --------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* --------------------------------------------- */
+
+section {
+    padding: 10px 0 80px 0;
+    height: 100vh;
+    position: relative;
+}
+
+.box {
+    padding: 1%;
+    height: 100%;
+    width: auto;
+    margin: auto 0;
+}
+
+/* --------------------------------------------- */
+/*      REUSABLE COMPONENTS FOR ANIMATIONS,      */
+/* TRANSITIONS, AND OTHER ONLOAD/SCROLL EFFECTS  */
+/* --------------------------------------------- */
+
+.one {
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+.two {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.three {
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+.four {
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+.five {
+    -webkit-animation-delay: 2.5s;
+    -moz-animation-delay: 2.5s;
+    animation-delay: 2.5s;
+}
+
+.six {
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    animation-delay: 3s;
+}
+
+.seven {
+    -webkit-animation-delay: 3.5s;
+    -moz-animation-delay: 3.5s;
+    animation-delay: 3.5s;
+}
+
+.animate {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-fillmode: both;
+}
+
+/* --------------------------------------------- */
+/* FADE ONTO SCREEN - IN PLACE */
+/* --------------------------------------------- */
+
+@-webkit-keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name:fadeIn;
+    animation-name: fadeIn;
+}
+
+/* --------------------------------------------- */
+/* FADE FROM SCREEN - IN PLACE */
+/* --------------------------------------------- */
+
+@-webkit-keyframes fadeOut{
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut{
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    -webkit-animation-name:fadeOut;
+    animation-name: fadeOut;
+}
+
+/* --------------------------------------------- */
+/* FADE ONTO SCREEN - FROM BOTTOM --> TOP */
+/* --------------------------------------------- */
+
+@-webkit-keyframes fadeUp{
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeUp{
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeUp {
+    -webkit-animation-name:fadeUp;
+    animation-name: fadeUp;
+}
+
+/* --------------------------------------------- */
+/* FADE ONTO SCREEN - FROM TOP --> BOTTOM */
+/* --------------------------------------------- */
+
+@-webkit-keyframes fadeDown{
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeDown{
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeDown {
+    -webkit-animation-name:fadeDown;
+    animation-name: fadeDown;
+}
+
+/* --------------------------------------------- */
+/* FADE ONTO SCREEN - FROM LEFT --> RIGHT */
+/* --------------------------------------------- */
+
+@-webkit-keyframes fadeLeft{
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeLeft{
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeLeft {
+    -webkit-animation-name:fadeLeft;
+    animation-name: fadeLeft;
+}
+
+/* --------------------------------------------- */
+/* HEADER */
+/* --------------------------------------------- */
+
+header {
+    height: 10em;
+    top: -200;
+}
+
+h1 {
+    text-transform: lowercase;
+    letter-spacing: 5px;
+}
+
+.logo-textbox {
+    display: flex;
+    padding: 2%;
+    align-items: center;
+    justify-content: space-around;
+    width: 95%;
+    flex-wrap: wrap;
+}
+
+.logo-textbox img {
+    width: 120px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.logo-textbox h1 {
+    font-size: 4em;
+    margin-left: 2%;
+    font-weight: 300;
+}
+
+.logo-textbox p {
+    text-align: center;
+}
+
+
+/* --------------------------------------------- */
+/* NAV BAR */
+/* --------------------------------------------- */
+
+nav {
+    width: 95%;
+    margin: 0 auto;
+    background-color: #B08069;
+    padding: 1%;
+}
+
+.nav-container {
+    display: flex;
+}
+
+.nav-list {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.list-item {
+    flex-direction: row;
+    flex: 1;
+}
+
+.nav-search-bar {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+input {
+    width: 90%;
+    border: none;
+    height: 1.3em;
+    background-color: #D8D8D8;
+}
+
+.nav-search-bar ion-icon {
+    background-color: #b0fcf6;
+    color: rgb(34, 34, 34);
+    padding: 3px;
+}
+
+nav li {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+.nav-container a:after {
+    position: absolute;
+    margin: auto;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #b0fcf6;
+    left: -270px;
+    margin-left: 520px;
+    bottom: 0;
+    transition: left 0.4s linear, margin-left 0.4s ease-out;
+}
+
+.nav-container a:hover:after {
+    left: 0;
+    margin-left: 0;
+    transition: left 0.3s ease-out;
+    /*transition: width .3s;*/
+}
+
+/* --------------------------------------------- */
+/* LANDING PAGE */
+/* --------------------------------------------- */
+
+.ascendant-styles,
+.retrograde-fashion {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 0;
+    align-items: center;
+}
+
+.ascendant-textbox.textbox,
+.retrograde-textbox.textbox {
+    width: 50%;
+}
+
+.ascendant-textbox.textbox {
+    text-align: right;
+}
+
+.ascendant-textbox.textbox  h2:after {
+    margin: 10px 0 10px auto;
+}
+
+.retrograde-textbox.textbox {
+    text-align: left;
+}
+
+.retrograde-textbox.textbox  h2:after {
+    margin: 10px auto 10px 0;
+}
+
+.landing-page-pic {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    position: relative;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+#ascendant-pic{
+    top: -200px;
+}
+
+.picbox {
+    background-color: black;
+    overflow: hidden;
+    max-width: 50%;
+    width: fit-content;
+    max-height: 90%;
+    height: fit-content;
+}
+
+.landing-page-pic:hover {
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+.disclaimer {
+    text-align: center;
+}
+
+main {
+    padding: 80px 0;
+}
+/* --------------------------------------------- */
+/* CART */
+/* --------------------------------------------- */
+
+.textbox a:link,
+.textbox a:visited,
+.textbox span {
+    color: #C6E8E6;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.textbox a:hover,
+.textbox span:hover,
+.textbox a:active,
+.textbox span:active {
+    color: #B0FCF6;
+
+}
+
+/* --------------------------------------------- */
+/* PORTFOLIO */
+/* --------------------------------------------- */
+
+.section-showcase {
+    display: flex;
+}
+
+.section-showcase ul.showcase {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.row {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    padding-top: 2%;
+}
+
+.section-showcase .showcase img {
+    width: 80%;
+    height: auto;
+}
+
+
+
+/* --------------------------------------------- */
+/* SHOP */
+/* --------------------------------------------- */
+
+body#animation-weirdness {
+    overflow: hidden;
+}
+
+div.shop-title-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+.section-showcase {
+    position: relative;
+    height: auto;
+}
+
+.section-titles {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    padding-top: 5%;
+}
+
+.section-titles h2 {
+    cursor: pointer;
+    transition: color 0.2s;
+    height: fit-content;
+    flex-wrap: wrap;
+    font-weight: 300;
+    font-size: 250%;
+}
+
+.section-titles h2:hover {
+    color: #b0fcf6;
+}
+
+div.textbox {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+}
+
+div.textbox span,
+div.textbox a {
+    font-weight: 400;
+}
+
+div.textbox h2{
+    font-weight: 400;
+    margin-top: 10%;
+}
+
+div.textbox h2:after {
+    display: block;
+    height: 2px;
+    background-color:#b0fcf6;
+    content: " ";
+    width: 80%;
+    margin: 10px auto;
+}
+
+.shop li {
+    flex-basis: 25%;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.section-showcase.shop img {
+    height: 400px;
+    object-fit: cover;
+}
+
+img.abnormal {
+    object-position: top;
+}
+
+
+.shop.product-img-container {
+    text-align: center;
+}
+
+vr {
+    color: #b0fcf6;
+    background-color: #b0fcf6;
+    border-width: 0px;
+    width: 2px;
+    height: 90%;
+    position: absolute;
+    left: 47.5%;
+}
+
+.product-title p{
+    width: 90%;
+    margin: 0 auto;
+}
+
+ul#product-list {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------- */
+/* ABOUT */
+/* --------------------------------------------- */
+
+.about-copy-textbox img {
+    border-radius: 50px;
+    width: 90%;
+}
+
+.about-copy-textbox {
+    margin: 0 auto;
+    display: flex;
+    flex: 0.9;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 3%;
+}
+
+.about-copy-container {
+    flex: 1;
+}
+
+p.long-copy {
+    font-size: 18px;
+    width: 100%;
+    height: auto;
+}
+
+.about-copy-textbox p {
+    text-align: right;
+}
+
+/* --------------------------------------------- */
+/* CONTACT */
+/* --------------------------------------------- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 3%;
+}
+
+.section-form {
+    height: auto;
+}
+
+form div {
+    padding: 3% 0;
+    vertical-align: center;
+}
+
+form label {
+    float: left;
+}
+
+form div input,
+form div textarea {
+    float: right;
+    width: 60%;
+}
+
+form div:last-child {
+    clear: both;
+    text-align: center;
+    vertical-align: center;
+    width: 70%;
+}
+
+#form-button {
+    border-radius: 200px;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+#form-button:hover,
+#form-button:active {
+    background-color: #b0fcf6;
+    color: black;
+}
+
+
+/* --------------------------------------------- */
+/* FOOTER */
+/* --------------------------------------------- */
+
+main {
+    width: 95%;
+    margin: auto;
+}
+
+
+/* --------------------------------------------- */
+/* FOOTER */
+/* --------------------------------------------- */
+
+img.social-icon {
+    height: 20px;
+    width: 20px;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    overflow-anchor: initial;
+    background-color: #172e2c;
+    height: 100px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.page-links,
+.social-links {
+    display: flex;
+    width: 50%;
+}
+
+footer ul {
+    display: flex;
+    width: 90%;
+    padding-top: 2.5%;
+}
+
+.page-links {
+    justify-content: flex-start;
+    
+
+}
+
+.social-links {
+    justify-content: flex-end;
+}
+
+.center-copyright {
+    width: 15%;
+    margin: 0 auto;
+    opacity: 0.6;
+}
+
+footer p {
+    position: absolute;
+    bottom: 0;
+}
+
+footer li {
+    display: inline-block;
+
+}
+
+footer li a:link,
+footer li a:visited {
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+footer li a:hover,
+footer li a:active {
+    opacity: 1;
+}
+
+.page-links ul li {
+    text-align: left;
+    padding-left: 5%;
+}
+
+.social-links ul li {
+    text-align: right;
+    padding-right: 5%;
+}
+
+.footer-nav.social-links {
+    float: right;
+}
+
+.footer-nav.page-links {
+    float: left;
+}
